@@ -151,7 +151,7 @@ class trabajadorController extends Controller
 
         if(Auth::attempt($credenciales)){
             request()->session()->regenerate();
-            return 'Logeado';
+            return redirect()->route('inicio')->with('logeado', 'Iniciaste sesión, ahora podras: ');
         }
 
 

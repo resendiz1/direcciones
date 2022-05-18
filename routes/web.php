@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 Route::get('/agregar', [trabajadorController::class, 'create'])->name('agregar');
 Route::post('/agregar', [trabajadorController::class, 'store'])->name('create');
-Route::post('/', [trabajadorController::class, 'buscar'])->name('buscar');
+Route::post('/buscar', [trabajadorController::class, 'buscar'])->name('buscar');
 
 
 

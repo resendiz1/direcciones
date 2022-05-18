@@ -1,4 +1,4 @@
-@extends('template')
+    @extends('template')
 
 @section('content')
    <div class="container">
@@ -8,6 +8,15 @@
            </div>
 
            <div class="col-6 text-center">
+            @if (session('logeado'))
+            <div class="alert alert-success font-weight-bold">
+                <i class="fa fa-check"></i>
+                {{session('logeado')}}
+                <span>
+                    <li></li>
+                </span>
+            </div> 
+            @endif
          
             @if (session('codigo'))
                 <div class="alert alert-success font-weight-bold">
@@ -29,11 +38,11 @@
 
        <div class="row mt-5 justify-content-center">
             <div class="col-12 col-sm-12 col-md-5 col-lg-5 text-center">
-                <form action="{{asset(route('buscar'))}}" method="POST">
-                    @csrf
+                <form action="{{route('buscar')}}" method="POST">
+                    @csrf @method('POST')
                     <input type="text" class="form-control" placeholder="Buscar" name="buscado" required>
        
-                    <button class="btn btn-success btn-sm mt-2">
+                    <button class="btn btn-success btn-sm mt-2" type="submit">
                         <i class="fa fa-search"></i>
                         Buscar
                     </button>
@@ -73,7 +82,7 @@
                     <b>Puesto: </b> {{$trabajadorItem->puesto}}   
                 </div>
                 <div class="col-12">
-                    <b>Email: </b>{{$trabajadorItem->correo}}
+                    <b>Email: </b>   <a href="mailto:{{$trabajadorItem->correo}}">{{$trabajadorItem->correo}}</a>
                 </div>
                 <div class="col-12">
                     <b>N&uacute;mero: </b>{{$trabajadorItem->celular}}
@@ -166,10 +175,10 @@
                     <b>Puesto: </b> {{$resultadoItem->puesto}}   
                 </div>
                 <div class="col-12">
-                    <b>Email: </b>{{$resultadoItem->correo}}
+                    <b>Email: </b>   <a href="mailto:{{$resultadoItem->correo}}">{{$resultadoItem->correo}}</a>
                 </div>
                 <div class="col-12">
-                    <b>N&uacute;mero: </b> <a href="tel:" style="text-decoration-line: none"> {{$resultadoItem->celular}} </a>
+                    <b>N&uacute;mero: </b> <a href="tel:{{$resultadoItem->celular}}" style="text-decoration-line: none"> {{$resultadoItem->celular}} </a>
                 </div>
                 <div class="col-12">
                     <b>Planta: </b>{{$resultadoItem->planta}}
@@ -225,7 +234,7 @@
                     <b>Puesto: </b> {{$datos_trabajadorItem->puesto}}   
                 </div>
                 <div class="col-12">
-                    <b>Email: </b>{{$datos_trabajadorItem->correo}}
+                    <b>Email: </b>   <a href="mailto:{{$datos_trabajadorItem->correo}}">{{$datos_trabajadorItem->correo}}</a>
                 </div>
                 <div class="col-12">
                     <b>N&uacute;mero: </b>{{$datos_trabajadorItem->celular}}

@@ -19,19 +19,19 @@
 <div class="container-fluid">
   <div class="row bg-success p-2 fixed-top justify-content-around text-center p-3">
 
-    <div class="col-12 col-sm-12 col-md-8 col-lg-3">
+    <div class="col-3">
       <a href="{{asset(route('inicio'))}}" class="text-white">
         <i class="fa fa-home"></i>
       </a>
     </div>
     
-    <div class="col-12 col-sm-12 col-md-8 col-lg-3">
-      <a href="{{asset(route('login'))}}" class="text-white">
+    <div class="col-3">
+      <a href="{{route('login')}}" class="text-white">
         <i class="fa fa-lock"></i>
       </a>
     </div>
     @auth
-      <div class="col-12 col-sm-12 col-md-8 col-lg-3">
+      <div class="col-3">
         <a href="{{asset(route('gestion'))}}" class="text-white">
           <i class="fa fa-pencil"></i>
         </a>
@@ -40,7 +40,7 @@
 
 @auth
     
-<div class="col-12 col-sm-12 col-md-8 col-lg-3">
+<div class="col-3">
   <a href="{{asset(route('agregar'))}}" class="text-white">
     <i class="fa fa-plus-square"></i>
   </a>
