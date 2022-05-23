@@ -19,17 +19,35 @@ class trabajadorController extends Controller
 
     public function store(){
 
-     
-        //Falta la validación
-        Trabajador::create([
-            'nombre' => request('nombre'),
-            'puesto' =>request('puesto'),
-            'correo' =>request('correo'),
-            'extencion' => request('extencion'),
-            'planta' =>request('planta')
-        ]);
 
-     return back()->with('agregado', 'Trabajador agregado con exito');   
+
+        if(request('telefono')){
+            //Falta la validación
+            Trabajador::create([
+                'nombre' => request('nombre'),
+                'puesto' =>request('puesto'),
+                'correo' =>request('correo'),
+                'telefono' =>request('celular'),
+                'extencion' => request('extencion'),
+                'planta' =>request('planta')
+            ]);
+
+        return back()->with('agregado', 'Trabajador agregado con exito');   
+
+        }
+
+            //Falta la validación
+            Trabajador::create([
+                'nombre' => request('nombre'),
+                'puesto' =>request('puesto'),
+                'correo' =>request('correo'),
+                'extencion' => request('extencion'),
+                'planta' =>request('planta')
+            ]);
+
+         return back()->with('agregado', 'Trabajador agregado con exito');   
+
+
     }
 
 
@@ -86,6 +104,9 @@ class trabajadorController extends Controller
 
 //Codigo que envia el codigo por correo para  confirmar su numero de celular
     public function codigo(Request $request){
+
+
+     
        
         $codigo = md5($request->codigo);
         $correo = $request->codigo;

@@ -82,7 +82,10 @@
                     <b>Puesto: </b> {{$trabajadorItem->puesto}}   
                 </div>
                 <div class="col-12">
-                    <b>Email: </b>   <a href="mailto:{{$trabajadorItem->correo}}">{{$trabajadorItem->correo}}</a>
+                    <b>Email: </b>   
+                    <a href="mailto:{{$trabajadorItem->correo}}" class="btn btn-primary btn-sm">
+                        {{$trabajadorItem->correo}}
+                    </a>
                 </div>
                 <div class="col-12">
                     <b>N&uacute;mero: </b>{{$trabajadorItem->celular}}
@@ -178,7 +181,12 @@
                     <b>Email: </b>   <a href="mailto:{{$resultadoItem->correo}}">{{$resultadoItem->correo}}</a>
                 </div>
                 <div class="col-12">
-                    <b>N&uacute;mero: </b> <a href="tel:{{$resultadoItem->celular}}" style="text-decoration-line: none"> {{$resultadoItem->celular}} </a>
+                    <b>N&uacute;mero: </b> 
+                    @if ($resultadoItem->celular)
+                        <a href="tel:{{$resultadoItem->celular}}" class="btn btn-primary btn-sm"> 
+                            {{$resultadoItem->celular}} 
+                        </a>
+                    @endif
                 </div>
                 <div class="col-12">
                     <b>Planta: </b>{{$resultadoItem->planta}}
