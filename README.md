@@ -3,12 +3,12 @@ Para poder ejecutar el proyecto se necesita:
 -> Composer
 
 
-1.- Se clona el proyecto en la carpeta del servidor apache
-2.- se realiza un <i> composer install </i> para instalar lo que se necesita
-3.- Se configura el archivo .env
-4.- Realiza las migraciones 
-5.- Genera un usuario para acceder mediante tinker <b> User::factory()->create(['email' => 'email@mail.com']) </b>
-6.- Configurar las credenciales del correo electronico en el archivo .env
+1.- Se clona el proyecto en la carpeta del servidor apache <br>
+2.- se realiza un <i> composer install </i> para instalar lo que se necesita <br>
+3.- Se configura el archivo .env <br>
+4.- Realiza las migraciones <br>
+5.- Genera un usuario para acceder mediante tinker <b> User::factory()->create(['email' => 'email@mail.com']) </b> <br>
+6.- Configurar las credenciales del correo electronico en el archivo .env <br>
 
 
 
