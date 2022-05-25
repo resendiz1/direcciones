@@ -7,7 +7,7 @@ Para poder ejecutar el proyecto se necesita:
 2.- se realiza un <i> composer install </i> para instalar lo que se necesita
 3.- Se configura el archivo .env
 4.- Realiza las migraciones 
-5.- Genera un usuario para acceder mediante tinker User::factory()->create(['email' => 'email@mail.com'])
+5.- Genera un usuario para acceder mediante tinker <b> User::factory()->create(['email' => 'email@mail.com']) </b>
 6.- Configurar las credenciales del correo electronico en el archivo .env
 
 
