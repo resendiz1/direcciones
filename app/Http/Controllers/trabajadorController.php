@@ -43,13 +43,13 @@ class trabajadorController extends Controller
     public function buscar(){
 
         $query = request('buscado');
-        $resultado = DB::select("SELECT*FROM TRABAJADORES WHERE nombre LIKE '%$query%' or correo LIKE '%$query%' ");
+        $resultado = DB::select("SELECT*FROM trabajadores WHERE nombre LIKE '%$query%' or correo LIKE '%$query%' ");
         return view('ver',compact('resultado'));    
     }
 
 
     public function gestion(){
-        $resultado = DB::select('SELECT*FROM TRABAJADORES');
+        $resultado = DB::select('SELECT*FROM trabajadores');
         return view('gestion.gestion', compact('resultado'));
     }
 
