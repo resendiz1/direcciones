@@ -183,7 +183,7 @@
                 <div class="col-12">
                     <b>N&uacute;mero: </b> 
                     @if ($resultadoItem->celular)
-                        <a href="tel:{{$resultadoItem->celular}}" class="btn btn-primary btn-sm"> 
+                        <a href="tel:{{$resultadoItem->celular}}"> 
                             {{$resultadoItem->celular}} 
                         </a>
                     @endif

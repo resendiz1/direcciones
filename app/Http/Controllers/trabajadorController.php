@@ -21,31 +21,18 @@ class trabajadorController extends Controller
 
 
 
-        if(request('telefono')){
+        
             //Falta la validación
             Trabajador::create([
                 'nombre' => request('nombre'),
                 'puesto' =>request('puesto'),
                 'correo' =>request('correo'),
-                'telefono' =>request('celular'),
+                'celular ' =>request('telefono'),
                 'extencion' => request('extencion'),
                 'planta' =>request('planta')
             ]);
 
         return back()->with('agregado', 'Trabajador agregado con exito');   
-
-        }
-
-            //Falta la validación
-            Trabajador::create([
-                'nombre' => request('nombre'),
-                'puesto' =>request('puesto'),
-                'correo' =>request('correo'),
-                'extencion' => request('extencion'),
-                'planta' =>request('planta')
-            ]);
-
-         return back()->with('agregado', 'Trabajador agregado con exito');   
 
 
     }
